@@ -26,7 +26,7 @@ public class ShapeFactory {
    private static Shape createShape(ShapeType type,int fieldLength, int fieldHeight) {
       switch (type) {
          case BOX -> {
-            return new Box(fieldLength,fieldHeight);
+            return new Box(fieldHeight,fieldLength);
          }
 //         case LINE -> {
 //            return new Line(game);

@@ -21,17 +21,17 @@ public class Field {
     public boolean fieldProcessor() {
         boolean loss;
         shape = ShapeFactory.randomShape(fieldLength,fieldHeight);
-        while (!checkForCollision(shape)) shape.moveShapeDown(fieldHeight);
+        while (canMoveDown(shape)) shape.moveShapeDown(fieldHeight);
         loss=setShapeOnField(shape);
 //        deleteFullLayers(lookForFullLayers());
         return loss;
     }
 
-    private boolean checkForCollision(Shape shape) {
+    private boolean canMoveDown(Shape shape) {
         int allCanMove = 0;
         for (int h = 0; h < fieldHeight; h++) {
             for (int l = 0; l < fieldLength; l++) {
-                if (shape.getCurrentFigure(h,l) && (h == fieldHeight-1 || field[h + 1][l])) {
+                if (shape.getCurrentFigure(h,l) && !(h == fieldHeight-1|| field[h + 1][l])) {
                     allCanMove++;
                     if (allCanMove == 4) return true;
                 }
