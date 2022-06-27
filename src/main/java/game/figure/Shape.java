@@ -15,7 +15,7 @@ public abstract class Shape {
     //added getCurrentFigure
     public void moveShapeDown(int fieldLength){
             System.arraycopy(currentFigure, 0, nextFigure, 1,fieldLength-1);
-            System.arraycopy(nextFigure,0,currentFigure,0,fieldLength-1);
+            System.arraycopy(nextFigure,0,currentFigure,0,fieldLength);
     }
 
     public boolean getCurrentFigure(int height,int length) {

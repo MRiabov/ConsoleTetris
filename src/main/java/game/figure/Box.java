@@ -10,7 +10,7 @@ public class Box extends Shape {
         super(fieldHeight,fieldLength);
         int randomX=(int)(Math.random()*(fieldLength-1));
         for (int h = 0; h < 2; h++) {
-            System.arraycopy(figure[h], 0, currentFigure[h], randomX, 2);
+            System.arraycopy(figure[h], 0, currentFigure[h+1], randomX, 2);
         }
     }
 }
