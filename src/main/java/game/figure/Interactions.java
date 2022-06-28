@@ -6,10 +6,11 @@ import static game.Field.loss;
 
 public class Interactions implements Runnable{
     Scanner scanner = new Scanner(System.in);
-    public char button;
+    public static String button="s";
     public void run(){
         while (!loss){
-            char button = scanner.next().charAt(0);
+            String input = scanner.next();
+            if (input!=null) button=input;
         }
     }
 }

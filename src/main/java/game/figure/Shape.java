@@ -6,7 +6,6 @@ public abstract class Shape {
     protected final boolean[][] currentFigure;
     final boolean[][] nextFigure;
 
-
     public Shape(int fieldHeight, int fieldLength) {
         this.currentFigure = new boolean[fieldHeight][fieldLength];
         this.nextFigure = new boolean[fieldHeight][fieldLength];

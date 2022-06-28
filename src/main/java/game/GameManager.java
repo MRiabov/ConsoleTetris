@@ -3,7 +3,7 @@ package game;
 public class GameManager {
 
 
-public static void main(String[] args) {
+public static void main(String[] args) throws InterruptedException {
     Field field = new Field(6,9);
         while(!field.fieldProcessor()){
             Printer.printOut(field);
@@ -14,7 +14,8 @@ public static void main(String[] args) {
     //todo
     // DONE make it work, yay
     // DONE multithreading https://www.youtube.com/watch?v=J09TLPgwd0Y
-    // DONE input,
-    // DONE validate print,
-    // DONE validate deleteLayers,
+    // input, FIX???
+    // validate print,
+    // ?.... validate deleteLayers,
     // rotation,
+    // colors

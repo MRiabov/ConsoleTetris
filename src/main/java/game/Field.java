@@ -21,19 +21,21 @@ public class Field {
         this.fieldHeight = fieldHeight+3;
         field=new boolean[this.fieldHeight][fieldLength];
         colorsField=new boolean[this.fieldHeight][fieldLength];
+        Thread userInputThread = new Thread(new Interactions());
+        userInputThread.start();
     }
 
-
-
-    public boolean fieldProcessor() {
+    public boolean fieldProcessor() throws InterruptedException {
         shape = ShapeFactory.randomShape(fieldLength,fieldHeight);
-        while (canMoveDown(shape)) shape.moveShapeDown(fieldHeight);
+        while (canMoveDown(shape)) {
+            shape.moveShapeDown(fieldHeight);
+            playerActionStandby();
+            Printer.printOut(fieldHeight,fieldLength,field,shape);
+        }
         loss=setShapeOnField(shape);
         deleteFullLayers(lookForFullLayers());
         return loss;
-
     }
-
 
     private boolean canMoveDown(Shape shape) {
         int allCanMove = 0;
@@ -84,12 +86,12 @@ public class Field {
         }
         return false;
     }
-    private void playerAction() throws InterruptedException {
+    private void playerActionStandby() throws InterruptedException {
         for (int i = 0; i < 10; i++) {
             TimeUnit.MILLISECONDS.sleep(100);
             switch (interactions.button){
-                case 'd' -> shape.moveShapeRight(fieldHeight,fieldLength);
-                case 'a'-> shape.moveShapeLeft(fieldHeight,fieldLength);
+                case "d" -> {if (canMoveRight()) shape.moveShapeRight(fieldHeight,fieldLength);}
+                case "a" -> {if (canMoveLeft()) shape.moveShapeLeft(fieldHeight,fieldLength);}
             }
         }
     }
