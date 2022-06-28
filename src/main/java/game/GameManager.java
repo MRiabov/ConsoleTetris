@@ -14,7 +14,7 @@ public static void main(String[] args) throws InterruptedException {
 }
 //todo писать классы так, что бы если другой захотел их вызвать, он не задумывался, как.
     //todo
-    // make it work,
+    // DONE make it work,   yay
     // multithreading https://www.youtube.com/watch?v=J09TLPgwd0Y
     // input,
     // validate print,

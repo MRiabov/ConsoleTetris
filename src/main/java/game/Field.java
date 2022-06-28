@@ -23,7 +23,7 @@ public class Field {
         shape = ShapeFactory.randomShape(fieldLength,fieldHeight);
         while (canMoveDown(shape)) shape.moveShapeDown(fieldHeight);
         loss=setShapeOnField(shape);
-//        deleteFullLayers(lookForFullLayers());
+        deleteFullLayers(lookForFullLayers());
         return loss;
     }
 
