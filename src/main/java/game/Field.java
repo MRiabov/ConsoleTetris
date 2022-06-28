@@ -55,7 +55,7 @@ public class Field {
     }
 
     private void deleteFullLayers(boolean[] fullLayers){
-        for (int h = fieldHeight; h > 0 ; h--) {
+        for (int h = fieldHeight-1; h > 0 ; h--) {
            if (fullLayers[h]){
                boolean[][] arrayBuffer = new boolean[h+1][fieldLength];
                if (fieldHeight - h >= 0) {
