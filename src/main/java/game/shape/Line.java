@@ -1,4 +1,4 @@
-package game.figure;
+package game.shape;
 
 public class Line extends Shape {
     private static final boolean[][] figure=new boolean[][]

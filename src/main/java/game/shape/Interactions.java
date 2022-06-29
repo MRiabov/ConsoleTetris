@@ -1,4 +1,4 @@
-package game.figure;
+package game.shape;
 
 import java.util.Scanner;
 

@@ -5,7 +5,7 @@ public class GameManager {
         Field field = new Field(6,9);
         System.out.println("Controls: \nA:move left,\nD:move right.\nEnjoy!");
             while(!field.fieldProcessor()){
-                Printer.printOut(field);
+                Printer.printOut(field.fieldHeight, field.fieldLength, field.field, field.colorsField, field.shape);
             }
     }
 }

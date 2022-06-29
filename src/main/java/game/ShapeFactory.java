@@ -1,8 +1,7 @@
 package game;
 
-import game.figure.Box;
-import game.figure.Shape;
-
+import game.shape.Box;
+import game.shape.Shape;
 
 import java.util.Random;
 
@@ -17,6 +16,7 @@ public class ShapeFactory {
 //        LSHAPE,
 //        MIRROREDLSHAPE;
    }
+
 
    ShapeFactory() {
    }
