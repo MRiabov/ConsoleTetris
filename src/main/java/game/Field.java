@@ -24,7 +24,7 @@ public class Field {
         Thread userInputThread = new Thread(new Interactions());
         userInputThread.start();
     }
-
+//
     public boolean fieldProcessor() throws InterruptedException {
         shape = ShapeFactory.randomShape(fieldLength,fieldHeight);
         while (canMoveDown(shape)) {

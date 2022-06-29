@@ -19,7 +19,7 @@ public class ShapeFactory {
 
 
    ShapeFactory() {
-   }
+   }//
    public static Shape randomShape(int fieldLength, int fieldHeight){
       return createShape(ShapeType.values()[random.nextInt(ShapeType.values().length)], fieldLength, fieldHeight);
    }

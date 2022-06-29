@@ -1,5 +1,5 @@
 package game.shape;
-
+//
 public class Box extends Shape {
     private static final String color = "\u001B[43m";//yellow
     private static final boolean[][] figure = new boolean[][]

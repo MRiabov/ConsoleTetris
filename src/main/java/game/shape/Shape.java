@@ -1,5 +1,5 @@
 package game.shape;
-
+//
 public abstract class Shape {
 
     protected final boolean[][] currentFigure;

@@ -1,5 +1,5 @@
 package game;
-
+//
 import game.shape.Shape;
 
 public class Printer{
