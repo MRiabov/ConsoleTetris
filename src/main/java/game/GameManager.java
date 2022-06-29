@@ -1,14 +1,13 @@
 package game;
 
 public class GameManager {
-
-
-public static void main(String[] args) throws InterruptedException {
-    Field field = new Field(6,9);
-        while(!field.fieldProcessor()){
-            Printer.printOut(field);
+    public static void main(String[] args) throws InterruptedException {
+        Field field = new Field(6,9);
+        System.out.println("Controls: \nA:move left,\nD:move right.\nEnjoy!");
+            while(!field.fieldProcessor()){
+                Printer.printOut(field);
             }
-        }
+    }
 }
 //todo писать классы так, что бы если другой захотел их вызвать, он не задумывался, как.
     //todo
@@ -16,6 +15,6 @@ public static void main(String[] args) throws InterruptedException {
     // DONE multithreading https://www.youtube.com/watch?v=J09TLPgwd0Y
     // DONE input
     // DONE validate print,
-    // ?.... validate deleteLayers,
+    // DONE validate deleteLayers,
     // rotation,
     // colors

@@ -68,7 +68,7 @@ public class Field {
     private void deleteFullLayers(boolean[] fullLayers){
         for (int h = fieldHeight-1; h > 0 ; h--) {
            if (fullLayers[h]){
-               System.arraycopy(field, 0, field, 1, fieldHeight-h);
+               System.arraycopy(field, 0, field, 1, h);
            }
        }
     }
@@ -88,8 +88,10 @@ public class Field {
         for (int i = 0; i < 10; i++) {
             TimeUnit.MILLISECONDS.sleep(100);
             switch (Interactions.button){
-                case "d" -> {if (canMoveRight()) shape.moveShapeRight(fieldHeight,fieldLength);}
-                case "a" -> {if (canMoveLeft()) shape.moveShapeLeft(fieldHeight,fieldLength);}
+                case "d" -> {if (canMoveRight()) shape.moveShapeRight(fieldHeight,fieldLength);
+                    Interactions.button="0";}
+                case "a" -> {if (canMoveLeft()) shape.moveShapeLeft(fieldHeight,fieldLength);
+                    Interactions.button="0";}
             }
         }
     }
@@ -97,7 +99,6 @@ public class Field {
     private boolean lossCondition(int h,int l){
         return h < 3 && field[h][l];
     }
-
 
     private boolean canMoveLeft(){
         int allCanMove = 0;
