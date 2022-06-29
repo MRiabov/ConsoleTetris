@@ -51,7 +51,7 @@ public class Field {
         return false;
     }
 
-    private boolean[] lookForFullLayers(){
+    private boolean[] lookForFullLayers(){//works
         boolean[] fullLayers = new boolean[fieldHeight];
         for (int h = 0; h < fieldHeight; h++) {
             int blocksOnLayer=0;
@@ -68,14 +68,11 @@ public class Field {
     private void deleteFullLayers(boolean[] fullLayers){
         for (int h = fieldHeight-1; h > 0 ; h--) {
            if (fullLayers[h]){
-               boolean[][] arrayBuffer = new boolean[h+1][fieldLength];
-               if (fieldHeight - h >= 0) {
-                   System.arraycopy(field[0], 0, arrayBuffer[0], 1, fieldLength - 1);
-                   System.arraycopy(arrayBuffer[0], 0, field[0], 0, fieldLength-1);
-               }
+               System.arraycopy(field, 0, field, 1, fieldHeight-h);
            }
-        }
+       }
     }
+
 
     private boolean setShapeOnField(Shape shape){
         for (int h = 0; h < fieldHeight; h++) {
