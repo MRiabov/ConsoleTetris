@@ -15,7 +15,7 @@ public static void main(String[] args) throws InterruptedException {
     // DONE make it work, yay
     // DONE multithreading https://www.youtube.com/watch?v=J09TLPgwd0Y
     // input, FIX???
-    // validate print,
+    // DONE validate print,
     // ?.... validate deleteLayers,
     // rotation,
     // colors

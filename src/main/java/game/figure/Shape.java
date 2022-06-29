@@ -20,8 +20,8 @@ public abstract class Shape {
         for (int h = 0; h < fieldHeight; h++) {
             System.arraycopy(currentFigure[h],0,nextFigure[h],1,fieldLength-1);
             nextFigure[h][0]=false;
-            System.arraycopy(nextFigure[h],0,currentFigure[h],0,fieldLength);
         }
+        System.arraycopy(nextFigure,0,currentFigure,0,fieldLength);
     }
 
     public void moveShapeLeft(int fieldHeight, int fieldLength){

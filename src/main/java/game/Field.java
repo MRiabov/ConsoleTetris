@@ -31,6 +31,7 @@ public class Field {
             shape.moveShapeDown(fieldHeight);
             playerActionStandby();
             Printer.printOut(fieldHeight,fieldLength,field,shape);
+            Interactions.button="0";
         }
         loss=setShapeOnField(shape);
         deleteFullLayers(lookForFullLayers());
@@ -89,7 +90,7 @@ public class Field {
     private void playerActionStandby() throws InterruptedException {
         for (int i = 0; i < 10; i++) {
             TimeUnit.MILLISECONDS.sleep(100);
-            switch (interactions.button){
+            switch (Interactions.button){
                 case "d" -> {if (canMoveRight()) shape.moveShapeRight(fieldHeight,fieldLength);}
                 case "a" -> {if (canMoveLeft()) shape.moveShapeLeft(fieldHeight,fieldLength);}
             }
@@ -105,7 +106,7 @@ public class Field {
         int allCanMove = 0;
         for (int h = 0; h < fieldHeight; h++) {
             for (int l = 0; l < fieldLength; l++) {
-                if (shape.getCurrentFigure(h,l) && !(l==0 || field[h][l+1])) {
+                if (shape.getCurrentFigure(h,l) && !(l==0 || field[h][l-1])) {
                     allCanMove++;
                     if (allCanMove == 4) return true;
                 }
@@ -118,7 +119,7 @@ public class Field {
         int allCanMove = 0;
         for (int h = 0; h < fieldHeight; h++) {
             for (int l = 0; l < fieldLength; l++) {
-                if (shape.getCurrentFigure(h,l) && !(l==0 || field[h][l-1])) {
+                if (shape.getCurrentFigure(h,l) && !(l==fieldLength-1 || field[h][l+1])) {
                     allCanMove++;
                     if (allCanMove == 4) return true;
                 }
