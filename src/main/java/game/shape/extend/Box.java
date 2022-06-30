@@ -1,4 +1,7 @@
-package game.shape;
+package game.shape.extend;
+
+import game.shape.Shape;
+
 //
 public class Box extends Shape {
     private static final String color = "\u001B[43m";//yellow

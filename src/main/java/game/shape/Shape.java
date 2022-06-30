@@ -3,8 +3,8 @@ package game.shape;
 public abstract class Shape {
 
     protected final boolean[][] currentFigure;
-    final boolean[][] nextFigure;
-    private static final String black = "\u001B[30m";//black
+    private final boolean[][] nextFigure;
+    static final String black = "\u001B[30m";//black
     protected final String[][] currentColors;
     final String[][] nextColors;
 
